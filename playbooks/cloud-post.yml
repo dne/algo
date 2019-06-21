@@ -42,6 +42,8 @@
   when:
     - pki_in_tmpfs
     - not algo_store_pki
+    - ansible_system == "Darwin" or
+      ansible_system == "Linux"
 
 - debug:
     var: IP_subject_alt_name
